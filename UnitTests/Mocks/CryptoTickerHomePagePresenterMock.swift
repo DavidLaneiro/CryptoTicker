@@ -11,8 +11,13 @@ import Foundation
 // MARK: Mock Version for test purposes
 class CryptoTickerHomePagePresenterMock : CryptoTickerHomePagePresenterProtocol{
     
-    func processGetCoins() {
-        <#code#>
-    }
  
+    required init(delegate: CryptoTicker.CryptoTickerViewDelegateProtocol) {
+        // Do something
+    }
+    
+    func processGetCoins() {
+        // Do something
+    }
+
 }

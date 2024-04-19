@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: Data flow
 protocol CryptoTickerViewDelegateProtocol {
     
     func successfullCoinsRetrieving()

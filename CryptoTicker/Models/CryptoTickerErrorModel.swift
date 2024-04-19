@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: Errors enum
 enum CryptoTickerErrorModel {
     
 }

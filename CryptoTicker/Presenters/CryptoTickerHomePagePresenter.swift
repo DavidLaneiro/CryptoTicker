@@ -8,13 +8,10 @@
 import Foundation
 
 // MARK: Real Version
-
 class CryptoTickerHomePagePresenter : CryptoTickerHomePagePresenterProtocol{
     
-    
-    
-    func processGetCoins() {
-        // Real Logic
+    required init(delegate: CryptoTickerViewDelegateProtocol) {
+        // Do something
     }
- 
+    
 }

@@ -20,6 +20,11 @@
 		1202C81A2BD2D62600A292CC /* CryptoTickerHomePagePresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202C8182BD2D62400A292CC /* CryptoTickerHomePagePresenterMock.swift */; };
 		1202C81C2BD2D76E00A292CC /* CryptoTickerViewDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202C81B2BD2D76E00A292CC /* CryptoTickerViewDelegateProtocol.swift */; };
 		1202C81E2BD2D7A600A292CC /* CryptoTickerErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202C81D2BD2D7A600A292CC /* CryptoTickerErrorModel.swift */; };
+		1202C8202BD2DA0C00A292CC /* CryptoTickerWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202C81F2BD2DA0C00A292CC /* CryptoTickerWebService.swift */; };
+		1202C8232BD2DA4500A292CC /* CryptoTickerWebserviceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202C8222BD2DA4500A292CC /* CryptoTickerWebserviceProtocol.swift */; };
+		1202C8252BD2DA6500A292CC /* CryptoTickerWebserviceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202C8242BD2DA6500A292CC /* CryptoTickerWebserviceMock.swift */; };
+		1202C8272BD2DB9500A292CC /* CryptoTickerCoins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202C8262BD2DB9500A292CC /* CryptoTickerCoins.swift */; };
+		1202C8292BD2DBC900A292CC /* CryptoTickerCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202C8282BD2DBC900A292CC /* CryptoTickerCoin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +62,11 @@
 		1202C8182BD2D62400A292CC /* CryptoTickerHomePagePresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTickerHomePagePresenterMock.swift; sourceTree = "<group>"; };
 		1202C81B2BD2D76E00A292CC /* CryptoTickerViewDelegateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTickerViewDelegateProtocol.swift; sourceTree = "<group>"; };
 		1202C81D2BD2D7A600A292CC /* CryptoTickerErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTickerErrorModel.swift; sourceTree = "<group>"; };
+		1202C81F2BD2DA0C00A292CC /* CryptoTickerWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTickerWebService.swift; sourceTree = "<group>"; };
+		1202C8222BD2DA4500A292CC /* CryptoTickerWebserviceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTickerWebserviceProtocol.swift; sourceTree = "<group>"; };
+		1202C8242BD2DA6500A292CC /* CryptoTickerWebserviceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTickerWebserviceMock.swift; sourceTree = "<group>"; };
+		1202C8262BD2DB9500A292CC /* CryptoTickerCoins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTickerCoins.swift; sourceTree = "<group>"; };
+		1202C8282BD2DBC900A292CC /* CryptoTickerCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTickerCoin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +117,9 @@
 		1202C7D52BD2D18700A292CC /* CryptoTicker */ = {
 			isa = PBXGroup;
 			children = (
-				1202C8092BD2D1B300A292CC /* Presenters */,
 				1202C8082BD2D1AD00A292CC /* Protocols */,
+				1202C8212BD2DA1C00A292CC /* Network */,
+				1202C8092BD2D1B300A292CC /* Presenters */,
 				1202C8072BD2D1A700A292CC /* Models */,
 				1202C8062BD2D1A000A292CC /* Controllers */,
 				1202C7D62BD2D18700A292CC /* AppDelegate.swift */,
@@ -133,6 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				1202C81D2BD2D7A600A292CC /* CryptoTickerErrorModel.swift */,
+				1202C8262BD2DB9500A292CC /* CryptoTickerCoins.swift */,
+				1202C8282BD2DBC900A292CC /* CryptoTickerCoin.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -142,6 +155,7 @@
 			children = (
 				1202C8152BD2D57D00A292CC /* CryptoTickerHomePagePresenterProtocol.swift */,
 				1202C81B2BD2D76E00A292CC /* CryptoTickerViewDelegateProtocol.swift */,
+				1202C8222BD2DA4500A292CC /* CryptoTickerWebserviceProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -175,8 +189,17 @@
 			isa = PBXGroup;
 			children = (
 				1202C8182BD2D62400A292CC /* CryptoTickerHomePagePresenterMock.swift */,
+				1202C8242BD2DA6500A292CC /* CryptoTickerWebserviceMock.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		1202C8212BD2DA1C00A292CC /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				1202C81F2BD2DA0C00A292CC /* CryptoTickerWebService.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,12 +336,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				1202C81E2BD2D7A600A292CC /* CryptoTickerErrorModel.swift in Sources */,
+				1202C8202BD2DA0C00A292CC /* CryptoTickerWebService.swift in Sources */,
 				1202C81C2BD2D76E00A292CC /* CryptoTickerViewDelegateProtocol.swift in Sources */,
 				1202C7D72BD2D18700A292CC /* AppDelegate.swift in Sources */,
+				1202C8252BD2DA6500A292CC /* CryptoTickerWebserviceMock.swift in Sources */,
 				1202C8162BD2D57D00A292CC /* CryptoTickerHomePagePresenterProtocol.swift in Sources */,
 				1202C7D92BD2D18700A292CC /* SceneDelegate.swift in Sources */,
+				1202C8272BD2DB9500A292CC /* CryptoTickerCoins.swift in Sources */,
 				1202C80E2BD2D27500A292CC /* CryptoTickerHomePageViewController.swift in Sources */,
+				1202C8292BD2DBC900A292CC /* CryptoTickerCoin.swift in Sources */,
 				1202C8142BD2D4E200A292CC /* CryptoTickerHomePagePresenter.swift in Sources */,
+				1202C8232BD2DA4500A292CC /* CryptoTickerWebserviceProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

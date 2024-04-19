@@ -7,8 +7,11 @@
 
 import Foundation
 
+
 protocol CryptoTickerHomePagePresenterProtocol {
     
-    func processGetCoins(delegate: CryptoTickerViewDelegateProtocol)
+    init(delegate: CryptoTickerViewDelegateProtocol)
+    
+    func processGetCoins()
     
 }
