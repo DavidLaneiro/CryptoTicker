@@ -9,13 +9,9 @@
 /* Begin PBXBuildFile section */
 		1202C7D72BD2D18700A292CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202C7D62BD2D18700A292CC /* AppDelegate.swift */; };
 		1202C7D92BD2D18700A292CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202C7D82BD2D18700A292CC /* SceneDelegate.swift */; };
-		1202C7DB2BD2D18700A292CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202C7DA2BD2D18700A292CC /* ViewController.swift */; };
 		1202C7DE2BD2D18700A292CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1202C7DC2BD2D18700A292CC /* Main.storyboard */; };
 		1202C7E02BD2D18900A292CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1202C7DF2BD2D18900A292CC /* Assets.xcassets */; };
 		1202C7E32BD2D18900A292CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1202C7E12BD2D18900A292CC /* LaunchScreen.storyboard */; };
-		1202C7EE2BD2D18B00A292CC /* CryptoTickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202C7ED2BD2D18B00A292CC /* CryptoTickerTests.swift */; };
-		1202C7F82BD2D18B00A292CC /* CryptoTickerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202C7F72BD2D18B00A292CC /* CryptoTickerUITests.swift */; };
-		1202C7FA2BD2D18B00A292CC /* CryptoTickerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202C7F92BD2D18B00A292CC /* CryptoTickerUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,16 +35,12 @@
 		1202C7D32BD2D18700A292CC /* CryptoTicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoTicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1202C7D62BD2D18700A292CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1202C7D82BD2D18700A292CC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1202C7DA2BD2D18700A292CC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1202C7DD2BD2D18700A292CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1202C7DF2BD2D18900A292CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1202C7E22BD2D18900A292CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1202C7E42BD2D18900A292CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1202C7E92BD2D18B00A292CC /* CryptoTickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoTickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1202C7ED2BD2D18B00A292CC /* CryptoTickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTickerTests.swift; sourceTree = "<group>"; };
 		1202C7F32BD2D18B00A292CC /* CryptoTickerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoTickerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1202C7F72BD2D18B00A292CC /* CryptoTickerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTickerUITests.swift; sourceTree = "<group>"; };
-		1202C7F92BD2D18B00A292CC /* CryptoTickerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTickerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +72,8 @@
 			isa = PBXGroup;
 			children = (
 				1202C7D52BD2D18700A292CC /* CryptoTicker */,
-				1202C7EC2BD2D18B00A292CC /* CryptoTickerTests */,
-				1202C7F62BD2D18B00A292CC /* CryptoTickerUITests */,
+				1202C80B2BD2D1E600A292CC /* UITests */,
+				1202C80C2BD2D1F300A292CC /* UnitTests */,
 				1202C7D42BD2D18700A292CC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -99,9 +91,12 @@
 		1202C7D52BD2D18700A292CC /* CryptoTicker */ = {
 			isa = PBXGroup;
 			children = (
+				1202C8092BD2D1B300A292CC /* Presenters */,
+				1202C8082BD2D1AD00A292CC /* Protocols */,
+				1202C8072BD2D1A700A292CC /* Models */,
+				1202C8062BD2D1A000A292CC /* Controllers */,
 				1202C7D62BD2D18700A292CC /* AppDelegate.swift */,
 				1202C7D82BD2D18700A292CC /* SceneDelegate.swift */,
-				1202C7DA2BD2D18700A292CC /* ViewController.swift */,
 				1202C7DC2BD2D18700A292CC /* Main.storyboard */,
 				1202C7DF2BD2D18900A292CC /* Assets.xcassets */,
 				1202C7E12BD2D18900A292CC /* LaunchScreen.storyboard */,
@@ -110,21 +105,46 @@
 			path = CryptoTicker;
 			sourceTree = "<group>";
 		};
-		1202C7EC2BD2D18B00A292CC /* CryptoTickerTests */ = {
+		1202C8062BD2D1A000A292CC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1202C7ED2BD2D18B00A292CC /* CryptoTickerTests.swift */,
 			);
-			path = CryptoTickerTests;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
-		1202C7F62BD2D18B00A292CC /* CryptoTickerUITests */ = {
+		1202C8072BD2D1A700A292CC /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1202C7F72BD2D18B00A292CC /* CryptoTickerUITests.swift */,
-				1202C7F92BD2D18B00A292CC /* CryptoTickerUITestsLaunchTests.swift */,
 			);
-			path = CryptoTickerUITests;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1202C8082BD2D1AD00A292CC /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		1202C8092BD2D1B300A292CC /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		1202C80B2BD2D1E600A292CC /* UITests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UITests;
+			sourceTree = "<group>";
+		};
+		1202C80C2BD2D1F300A292CC /* UnitTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UnitTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +278,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1202C7DB2BD2D18700A292CC /* ViewController.swift in Sources */,
 				1202C7D72BD2D18700A292CC /* AppDelegate.swift in Sources */,
 				1202C7D92BD2D18700A292CC /* SceneDelegate.swift in Sources */,
 			);
@@ -268,7 +287,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1202C7EE2BD2D18B00A292CC /* CryptoTickerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,8 +294,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1202C7F82BD2D18B00A292CC /* CryptoTickerUITests.swift in Sources */,
-				1202C7FA2BD2D18B00A292CC /* CryptoTickerUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
