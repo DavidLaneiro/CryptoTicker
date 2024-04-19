@@ -9,6 +9,6 @@ import Foundation
 
 protocol CryptoTickerHomePagePresenterProtocol {
     
-    func processGetCoins()
+    func processGetCoins(delegate: CryptoTickerViewDelegateProtocol)
     
 }
