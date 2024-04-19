@@ -6,6 +6,7 @@
 //
 
 import XCTest
+@testable import CryptoTicker
 
 final class CryptoTickerHomePageUnitTests: XCTestCase {
 

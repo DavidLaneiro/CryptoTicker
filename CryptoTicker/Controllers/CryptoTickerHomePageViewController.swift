@@ -10,6 +10,8 @@ import UIKit
 
 class CryptoTickerHomePageViewController : UIViewController{
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
