@@ -26,6 +26,7 @@
 		1202C8272BD2DB9500A292CC /* CryptoTickerCoins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202C8262BD2DB9500A292CC /* CryptoTickerCoins.swift */; };
 		1202C8292BD2DBC900A292CC /* CryptoTickerCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202C8282BD2DBC900A292CC /* CryptoTickerCoin.swift */; };
 		1202C82B2BD3FF3500A292CC /* CryptoTickerMockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202C82A2BD3FF3500A292CC /* CryptoTickerMockURLProtocol.swift */; };
+		1202C82D2BD4060300A292CC /* CryptoTickerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202C82C2BD4060300A292CC /* CryptoTickerConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		1202C8262BD2DB9500A292CC /* CryptoTickerCoins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTickerCoins.swift; sourceTree = "<group>"; };
 		1202C8282BD2DBC900A292CC /* CryptoTickerCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTickerCoin.swift; sourceTree = "<group>"; };
 		1202C82A2BD3FF3500A292CC /* CryptoTickerMockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTickerMockURLProtocol.swift; sourceTree = "<group>"; };
+		1202C82C2BD4060300A292CC /* CryptoTickerConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTickerConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 				1202C81D2BD2D7A600A292CC /* CryptoTickerErrorModel.swift */,
 				1202C8262BD2DB9500A292CC /* CryptoTickerCoins.swift */,
 				1202C8282BD2DBC900A292CC /* CryptoTickerCoin.swift */,
+				1202C82C2BD4060300A292CC /* CryptoTickerConstants.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				1202C8292BD2DBC900A292CC /* CryptoTickerCoin.swift in Sources */,
 				1202C82B2BD3FF3500A292CC /* CryptoTickerMockURLProtocol.swift in Sources */,
 				1202C8142BD2D4E200A292CC /* CryptoTickerHomePagePresenter.swift in Sources */,
+				1202C82D2BD4060300A292CC /* CryptoTickerConstants.swift in Sources */,
 				1202C8232BD2DA4500A292CC /* CryptoTickerWebserviceProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
