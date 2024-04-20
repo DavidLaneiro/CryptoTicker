@@ -11,8 +11,8 @@ import Foundation
 enum CryptoTickerErrorModel : Equatable, LocalizedError {
     
     case invalidCryptoURLString
-    case failedRequest(description: String)
     case invalidCryptoResponseModel
+    case failedRequest(description: String)
     
     var errorDescription: String? {
         

@@ -14,5 +14,6 @@ class CryptoTickerHomePageViewController : UIViewController{
         super.viewDidLoad()
     }
     
+    
 
 }
