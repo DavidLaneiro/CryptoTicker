@@ -27,7 +27,3 @@ CryptoTicker is an iOS app built in Swift that displays cryptocurrency rates in 
 
 4. **Testing:**
    - Explore and run unit tests and UI tests included in the project.
-
-## Contributing
-
-Contributions are welcome! Feel free to open an issue or submit a pull request on GitHub.
