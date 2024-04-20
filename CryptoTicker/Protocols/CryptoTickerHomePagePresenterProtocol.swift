@@ -10,7 +10,7 @@ import Foundation
 
 protocol CryptoTickerHomePagePresenterProtocol {
     
-    init(delegate: CryptoTickerViewDelegateProtocol)
+    init(cryptoWebService: CryptoTickerWebserviceProtocol, delegate: CryptoTickerViewDelegateProtocol)
     
     func processGetCoins()
     

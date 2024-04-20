@@ -8,16 +8,19 @@
 import Foundation
 @testable import CryptoTicker
 
-// MARK: Mock Version for test purposes
+// MARK: Mock Version for Test Purposes
 class CryptoTickerHomePagePresenterMock : CryptoTickerHomePagePresenterProtocol{
     
- 
-    required init(delegate: CryptoTicker.CryptoTickerViewDelegateProtocol) {
-        // Do something
-    }
+    var processGetCoinsCalled: Bool = false
     
+    required init(cryptoWebService: CryptoTicker.CryptoTickerWebserviceProtocol, delegate: CryptoTicker.CryptoTickerViewDelegateProtocol) {
+    
+        // Do nothing in the mock version
+        
+    }
+
     func processGetCoins() {
-        // Do something
+        self.processGetCoinsCalled = true
     }
 
 }
