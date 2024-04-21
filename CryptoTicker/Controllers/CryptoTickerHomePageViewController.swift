@@ -14,6 +14,20 @@ class CryptoTickerHomePageViewController : UIViewController{
         super.viewDidLoad()
     }
     
-    
+}
 
+extension CryptoTickerHomePageViewController : CryptoTickerViewDelegateProtocol{
+    
+    func successfullCoinsRetrieving() {
+         // Do something
+    }
+    
+    func errorHandler(error: CryptoTickerErrorModel) {
+        // Do something
+    }
+    
+    
+    
+    
+    
 }
