@@ -30,7 +30,7 @@ class CryptoTickerWebService : CryptoTickerWebserviceProtocol{
         cryptoRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         cryptoRequest.setValue("application/json", forHTTPHeaderField: "Accept")
         
-        let _ = urlSession.dataTask(with: cryptoRequest){ (data, response, error) in
+        let dataTask = urlSession.dataTask(with: cryptoRequest){ (data, response, error) in
             
             if let cryptoRequestError = error{
                 completionHandler(nil, CryptoTickerErrorModel.failedRequest(description: cryptoRequestError.localizedDescription))
@@ -49,6 +49,8 @@ class CryptoTickerWebService : CryptoTickerWebserviceProtocol{
             
             
         }
+        
+        dataTask.resume()
         
         
     }
