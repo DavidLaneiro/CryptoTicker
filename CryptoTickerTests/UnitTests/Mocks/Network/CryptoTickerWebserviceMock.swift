@@ -10,12 +10,9 @@ import Foundation
 // MARK: Mock version
 class CryptoTickerWebserviceMock : CryptoTickerWebserviceProtocol{
     
-    var isGetCoinsCalled : Bool = false
     var shouldReturnError : Bool = false
     
     func getCoins(completionHandler: @escaping (CryptoTickerCoins?, CryptoTickerErrorModel?) -> Void) {
-        
-        isGetCoinsCalled = true
         
         if shouldReturnError{
             
