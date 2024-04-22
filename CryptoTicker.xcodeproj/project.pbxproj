@@ -185,9 +185,10 @@
 		1202C80C2BD2D1F300A292CC /* UnitTests */ = {
 			isa = PBXGroup;
 			children = (
+				12E22B422BD6968E001400C1 /* ViewControllers */,
+				12E22B412BD69684001400C1 /* Network */,
+				12E22B402BD69679001400C1 /* Presenters */,
 				1202C8172BD2D60900A292CC /* Mocks */,
-				1202C8322BD413E300A292CC /* CryptoTickerHomePagePresenterTests.swift */,
-				1202C8342BD4141100A292CC /* CryptoTickerWebServiceTests.swift */,
 			);
 			path = UnitTests;
 			sourceTree = "<group>";
@@ -233,6 +234,29 @@
 				1202C80B2BD2D1E600A292CC /* UITests */,
 			);
 			path = CryptoTickerTests;
+			sourceTree = "<group>";
+		};
+		12E22B402BD69679001400C1 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				1202C8322BD413E300A292CC /* CryptoTickerHomePagePresenterTests.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		12E22B412BD69684001400C1 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				1202C8342BD4141100A292CC /* CryptoTickerWebServiceTests.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		12E22B422BD6968E001400C1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
