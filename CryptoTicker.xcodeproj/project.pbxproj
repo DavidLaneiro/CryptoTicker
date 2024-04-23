@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1202C7D72BD2D18700A292CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202C7D62BD2D18700A292CC /* AppDelegate.swift */; };
 		1202C7D92BD2D18700A292CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202C7D82BD2D18700A292CC /* SceneDelegate.swift */; };
-		1202C7DE2BD2D18700A292CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1202C7DC2BD2D18700A292CC /* Main.storyboard */; };
 		1202C7E02BD2D18900A292CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1202C7DF2BD2D18900A292CC /* Assets.xcassets */; };
 		1202C7E32BD2D18900A292CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1202C7E12BD2D18900A292CC /* LaunchScreen.storyboard */; };
 		1202C80E2BD2D27500A292CC /* CryptoTickerHomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202C80D2BD2D27500A292CC /* CryptoTickerHomePageViewController.swift */; };
@@ -29,6 +28,7 @@
 		1202C8332BD413E300A292CC /* CryptoTickerHomePagePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202C8322BD413E300A292CC /* CryptoTickerHomePagePresenterTests.swift */; };
 		1202C8352BD4141100A292CC /* CryptoTickerWebServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202C8342BD4141100A292CC /* CryptoTickerWebServiceTests.swift */; };
 		12E22B442BD698C9001400C1 /* CryptoTickerViewDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E22B432BD698C9001400C1 /* CryptoTickerViewDelegateMock.swift */; };
+		12E22B482BD7EA0C001400C1 /* CryptoTickerHomePageViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E22B472BD7EA0C001400C1 /* CryptoTickerHomePageViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +52,6 @@
 		1202C7D32BD2D18700A292CC /* CryptoTicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoTicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1202C7D62BD2D18700A292CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1202C7D82BD2D18700A292CC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1202C7DD2BD2D18700A292CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1202C7DF2BD2D18900A292CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1202C7E22BD2D18900A292CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1202C7E42BD2D18900A292CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -75,6 +74,7 @@
 		1202C8322BD413E300A292CC /* CryptoTickerHomePagePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTickerHomePagePresenterTests.swift; sourceTree = "<group>"; };
 		1202C8342BD4141100A292CC /* CryptoTickerWebServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTickerWebServiceTests.swift; sourceTree = "<group>"; };
 		12E22B432BD698C9001400C1 /* CryptoTickerViewDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTickerViewDelegateMock.swift; sourceTree = "<group>"; };
+		12E22B472BD7EA0C001400C1 /* CryptoTickerHomePageViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTickerHomePageViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +131,6 @@
 				1202C8062BD2D1A000A292CC /* Controllers */,
 				1202C7D62BD2D18700A292CC /* AppDelegate.swift */,
 				1202C7D82BD2D18700A292CC /* SceneDelegate.swift */,
-				1202C7DC2BD2D18700A292CC /* Main.storyboard */,
 				1202C7DF2BD2D18900A292CC /* Assets.xcassets */,
 				1202C7E12BD2D18900A292CC /* LaunchScreen.storyboard */,
 				1202C7E42BD2D18900A292CC /* Info.plist */,
@@ -258,6 +257,7 @@
 		12E22B422BD6968E001400C1 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				12E22B472BD7EA0C001400C1 /* CryptoTickerHomePageViewControllerTests.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -370,7 +370,6 @@
 			files = (
 				1202C7E32BD2D18900A292CC /* LaunchScreen.storyboard in Resources */,
 				1202C7E02BD2D18900A292CC /* Assets.xcassets in Resources */,
-				1202C7DE2BD2D18700A292CC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +417,7 @@
 			files = (
 				12E22B442BD698C9001400C1 /* CryptoTickerViewDelegateMock.swift in Sources */,
 				1202C81A2BD2D62600A292CC /* CryptoTickerHomePagePresenterMock.swift in Sources */,
+				12E22B482BD7EA0C001400C1 /* CryptoTickerHomePageViewControllerTests.swift in Sources */,
 				1202C8352BD4141100A292CC /* CryptoTickerWebServiceTests.swift in Sources */,
 				1202C8332BD413E300A292CC /* CryptoTickerHomePagePresenterTests.swift in Sources */,
 			);
@@ -447,14 +447,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1202C7DC2BD2D18700A292CC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1202C7DD2BD2D18700A292CC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1202C7E12BD2D18900A292CC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -598,7 +590,6 @@
 				INFOPLIST_KEY_CFBundleDisplayName = CryptoTicker;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -627,7 +618,6 @@
 				INFOPLIST_KEY_CFBundleDisplayName = CryptoTicker;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
