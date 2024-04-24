@@ -38,10 +38,11 @@ class CryptoTickerWebService : CryptoTickerWebserviceProtocol{
             }
             
             if let data = data, let cryptoResponseModel = try? JSONDecoder().decode(CryptoTickerCoins.self, from: data){
-                
+    
                 completionHandler(cryptoResponseModel, nil)
                 
             }else{
+            
                 
                 completionHandler(nil, CryptoTickerErrorModel.invalidCryptoResponseModel)
                 

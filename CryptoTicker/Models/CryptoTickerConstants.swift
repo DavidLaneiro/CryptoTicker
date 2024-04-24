@@ -7,11 +7,11 @@
 
 import Foundation
 
-
+// MARK: Constants for the app
 struct CryptoTickerConstants {
     
     
-    static let cryptoUrlString = "api.coincap.io/v2/rates"
+    static let cryptoUrlString = "https://api.coincap.io/v2/rates"
     
     // Only english language, no need for localization
     

@@ -12,7 +12,7 @@ struct CryptoTickerCoin : Decodable{
     
     let id: String
     let symbol: String
-    let currencySymbol: String
+    let currencySymbol: String?
     let type: String
     let rateUsd: String
 

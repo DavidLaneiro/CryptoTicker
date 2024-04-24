@@ -7,7 +7,7 @@
 
 import Foundation
 
-
+// MARK: Data flow
 protocol CryptoTickerHomePagePresenterProtocol {
     
     init(cryptoWebService: CryptoTickerWebserviceProtocol, delegate: CryptoTickerViewDelegateProtocol)

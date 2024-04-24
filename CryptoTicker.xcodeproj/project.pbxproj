@@ -29,6 +29,7 @@
 		1202C8352BD4141100A292CC /* CryptoTickerWebServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202C8342BD4141100A292CC /* CryptoTickerWebServiceTests.swift */; };
 		12E22B442BD698C9001400C1 /* CryptoTickerViewDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E22B432BD698C9001400C1 /* CryptoTickerViewDelegateMock.swift */; };
 		12E22B482BD7EA0C001400C1 /* CryptoTickerHomePageViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E22B472BD7EA0C001400C1 /* CryptoTickerHomePageViewControllerTests.swift */; };
+		12E22B4A2BD94767001400C1 /* CryptoTickerCoinsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E22B492BD94767001400C1 /* CryptoTickerCoinsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		1202C8342BD4141100A292CC /* CryptoTickerWebServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTickerWebServiceTests.swift; sourceTree = "<group>"; };
 		12E22B432BD698C9001400C1 /* CryptoTickerViewDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTickerViewDelegateMock.swift; sourceTree = "<group>"; };
 		12E22B472BD7EA0C001400C1 /* CryptoTickerHomePageViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTickerHomePageViewControllerTests.swift; sourceTree = "<group>"; };
+		12E22B492BD94767001400C1 /* CryptoTickerCoinsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTickerCoinsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				1202C80D2BD2D27500A292CC /* CryptoTickerHomePageViewController.swift */,
+				12E22B492BD94767001400C1 /* CryptoTickerCoinsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 				1202C8272BD2DB9500A292CC /* CryptoTickerCoins.swift in Sources */,
 				1202C80E2BD2D27500A292CC /* CryptoTickerHomePageViewController.swift in Sources */,
 				1202C8292BD2DBC900A292CC /* CryptoTickerCoin.swift in Sources */,
+				12E22B4A2BD94767001400C1 /* CryptoTickerCoinsViewController.swift in Sources */,
 				1202C82B2BD3FF3500A292CC /* CryptoTickerMockURLProtocol.swift in Sources */,
 				1202C8142BD2D4E200A292CC /* CryptoTickerHomePagePresenter.swift in Sources */,
 				1202C82D2BD4060300A292CC /* CryptoTickerConstants.swift in Sources */,

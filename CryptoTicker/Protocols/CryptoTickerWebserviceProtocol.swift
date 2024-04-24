@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: Data flow
 protocol CryptoTickerWebserviceProtocol{
     
     func getCoins(completionHandler: @escaping (CryptoTickerCoins?, CryptoTickerErrorModel?) ->  Void)

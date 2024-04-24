@@ -73,10 +73,6 @@ class CryptoTickerHomePageViewController : UIViewController{
         
         self.view.backgroundColor = .white
         
-        cryptoButton.addTarget(self, action: #selector(getCoinsTapped), for: .touchUpInside)
-        
-        addStackView()
-        
         if cryptoPresenter == nil {
             
             let cryptoWebService = CryptoTickerWebService(urlString: CryptoTickerConstants.cryptoUrlString)
@@ -85,6 +81,11 @@ class CryptoTickerHomePageViewController : UIViewController{
             
             
         }
+        
+        cryptoButton.addTarget(self, action: #selector(getCoinsTapped), for: .touchUpInside)
+        
+        addStackView()
+    
 
     }
 
@@ -128,7 +129,11 @@ class CryptoTickerHomePageViewController : UIViewController{
 extension CryptoTickerHomePageViewController : CryptoTickerViewDelegateProtocol{
     
     func successfullCoinsRetrieving() {
-         // Do something
+        
+        DispatchQueue.main.async {
+            self.present(CryptoTickerCoinsViewController(), animated: true)
+        }
+
     }
     
     func errorHandler(error: CryptoTickerErrorModel) {
