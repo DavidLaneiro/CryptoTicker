@@ -12,7 +12,7 @@ class CryptoTickerHomePageViewController : UIViewController{
     
     // MARK: Create UI Programatically
     
-    private let cryptoTitle : UILabel = {
+    let cryptoTitle : UILabel = {
         
         let title = UILabel()
         title.textAlignment = .center
@@ -24,7 +24,7 @@ class CryptoTickerHomePageViewController : UIViewController{
         
     }()
     
-    private let cryptoSubtitle : UILabel = {
+    let cryptoSubtitle : UILabel = {
        
         let subtitle = UILabel()
         
@@ -38,18 +38,20 @@ class CryptoTickerHomePageViewController : UIViewController{
         
     }()
     
-    private let cryptoButton : UIButton = {
+    let cryptoButton : UIButton = {
         
         let button = UIButton()
+        
         button.configuration = .filled()
         button.configuration?.baseBackgroundColor = .systemRed
         button.configuration?.title = CryptoTickerConstants.cryptoButtonTitle
         button.configuration?.image = UIImage(systemName: "bitcoinsign")
         
+        
         return button
     }()
     
-    private let cryptoStackView : UIStackView = {
+    let cryptoStackView : UIStackView = {
         
         let stackView = UIStackView()
         
@@ -60,6 +62,8 @@ class CryptoTickerHomePageViewController : UIViewController{
         
         return stackView
     }()
+    
+    var cryptoPresenter : CryptoTickerHomePagePresenterProtocol?
 
     
     // MARK: Set the background color and the StackView
@@ -67,8 +71,20 @@ class CryptoTickerHomePageViewController : UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setViewBackgroundColor(with: .white)
+        self.view.backgroundColor = .white
+        
+        cryptoButton.addTarget(self, action: #selector(getCoinsTapped), for: .touchUpInside)
+        
         addStackView()
+        
+        if cryptoPresenter == nil {
+            
+            let cryptoWebService = CryptoTickerWebService(urlString: CryptoTickerConstants.cryptoUrlString)
+            
+            cryptoPresenter = CryptoTickerHomePagePresenter(cryptoWebService: cryptoWebService, delegate: self)
+            
+            
+        }
 
     }
 
@@ -77,7 +93,7 @@ class CryptoTickerHomePageViewController : UIViewController{
     // Add subviews in order to the vertical stackview
     // Add constraints
     private func addStackView(){
-        
+            
         cryptoStackView.addArrangedSubview(cryptoTitle)
         cryptoStackView.addArrangedSubview(cryptoSubtitle)
         cryptoStackView.addArrangedSubview(cryptoButton)
@@ -96,12 +112,13 @@ class CryptoTickerHomePageViewController : UIViewController{
         ])
         
     }
+
     
-    // Set the view background color
-    private func setViewBackgroundColor(with color: UIColor){
+    
+    @objc fileprivate func getCoinsTapped(){
         
-        self.view.backgroundColor = color
-    
+        cryptoPresenter?.processGetCoins()
+        
     }
     
 }
