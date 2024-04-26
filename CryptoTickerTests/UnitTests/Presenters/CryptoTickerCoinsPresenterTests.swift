@@ -9,10 +9,10 @@ import XCTest
 @testable import CryptoTicker
 
 // MARK: Unit Tests for the PRESENTER
-final class CryptoTickerHomePagePresenterTests: XCTestCase {
+final class CryptoTickerCoinsPresenterTests: XCTestCase {
 
     // MARK: Variables needed
-    var sut : CryptoTickerHomePagePresenter!
+    var sut : CryptoTickerCoinsPresenter!
     var cryptoWebService : CryptoTickerWebserviceMock!
     var cryptoViewDelegate : CryptoTickerViewDelegateMock!
     
@@ -25,7 +25,7 @@ final class CryptoTickerHomePagePresenterTests: XCTestCase {
         
         cryptoViewDelegate = CryptoTickerViewDelegateMock()
         
-        sut = CryptoTickerHomePagePresenter(cryptoWebService: cryptoWebService, delegate: cryptoViewDelegate)
+        sut = CryptoTickerCoinsPresenter(cryptoWebService: cryptoWebService, delegate: cryptoViewDelegate)
     
         
     }

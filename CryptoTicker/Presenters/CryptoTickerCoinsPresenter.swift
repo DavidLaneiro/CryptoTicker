@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: Real Version
-class CryptoTickerHomePagePresenter : CryptoTickerHomePagePresenterProtocol{
+class CryptoTickerCoinsPresenter : CryptoTickerCoinsPresenterProtocol{
     
     private var cryptoWebService : CryptoTickerWebserviceProtocol
     private var delegate : CryptoTickerViewDelegateProtocol

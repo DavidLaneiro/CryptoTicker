@@ -9,7 +9,7 @@ import Foundation
 @testable import CryptoTicker
 
 // MARK: Mock Version for Test Purposes
-class CryptoTickerHomePagePresenterMock : CryptoTickerHomePagePresenterProtocol{
+class CryptoTickerCoinsPresenterMock : CryptoTickerCoinsPresenterProtocol{
     
     var processGetCoinsCalled: Bool = false
     
