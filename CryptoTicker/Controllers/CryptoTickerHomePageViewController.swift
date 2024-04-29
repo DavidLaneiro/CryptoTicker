@@ -62,8 +62,7 @@ class CryptoTickerHomePageViewController : UIViewController{
         
         return stackView
     }()
-    
-//    var cryptoPresenter : CryptoTickerHomePagePresenterProtocol?
+
 
     
     // MARK: Set the background color and the StackView
@@ -72,16 +71,7 @@ class CryptoTickerHomePageViewController : UIViewController{
         super.viewDidLoad()
         
         self.view.backgroundColor = .white
-        
-//        if cryptoPresenter == nil {
-//            
-//            let cryptoWebService = CryptoTickerWebService(urlString: CryptoTickerConstants.cryptoUrlString)
-//            
-//            cryptoPresenter = CryptoTickerCoinsPresenter(cryptoWebService: cryptoWebService, delegate: self)
-//            
-//            
-//        }
-//        
+               
         cryptoButton.addTarget(self, action: #selector(getCoinsTapped), for: .touchUpInside)
         
         addStackView()
