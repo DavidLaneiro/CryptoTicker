@@ -172,7 +172,7 @@ extension CryptoTickerCoinsViewController : CryptoTickerViewDelegateProtocol {
         
         self.cryptoCoins = retrievedCoins
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0){
+        DispatchQueue.main.async{
             self.hideActivityIndicator()
             self.cryptoTableView.reloadData()
         }
