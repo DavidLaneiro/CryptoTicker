@@ -32,9 +32,9 @@ class CryptoTickerCoinsPresenter : CryptoTickerCoinsPresenterProtocol{
                 return
             }
                 
-            if let _ = responseModel{
+            if let retrievedCoins = responseModel{
                     
-                self?.delegate.successfullCoinsRetrieving()
+                self?.delegate.successfullCoinsRetrieving(retrievedCoins: retrievedCoins)
                     
             }
         }

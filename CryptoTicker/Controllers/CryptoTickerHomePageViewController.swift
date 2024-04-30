@@ -64,7 +64,6 @@ class CryptoTickerHomePageViewController : UIViewController{
     }()
 
 
-    
     // MARK: Set the background color and the StackView
     
     override func viewDidLoad() {

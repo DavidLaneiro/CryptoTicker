@@ -19,5 +19,9 @@ struct CryptoTickerConstants {
     static let cryptoDescription = "Explore up-to-date cryptocurrency rates effortlessly. Stay informed about the latest trends in the digital currency market"
     static let cryptoButtonTitle = "Show coins"
     static let cryptoCoinCell = "CoinCell"
+    static let coinsTitle = "Coins:"
+    static let coinCellType = "Type"
+    static let coinCellRateUSD = "RateUSD"
+    static let coinActivityIndicator = "Retrieving coins..."
     
 }

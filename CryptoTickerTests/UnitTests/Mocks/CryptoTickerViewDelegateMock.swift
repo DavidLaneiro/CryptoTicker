@@ -11,17 +11,16 @@ import XCTest
 
 
 class CryptoTickerViewDelegateMock : CryptoTickerViewDelegateProtocol{
-    
+  
     var expectation : XCTestExpectation?
     var successfulGetCoinsCounter = 0
     var errorHandlerCounter = 0
     var coinsError : CryptoTickerErrorModel!
 
     
-    func successfullCoinsRetrieving() {
+    func successfullCoinsRetrieving(retrievedCoins: CryptoTicker.CryptoTickerCoins) {
         successfulGetCoinsCounter += 1
         expectation?.fulfill()
-        
     }
     
     func errorHandler(error: CryptoTicker.CryptoTickerErrorModel) {
