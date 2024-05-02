@@ -22,7 +22,7 @@ enum CryptoTickerErrorModel : Equatable, LocalizedError {
             return description
            
         case .invalidCryptoURLString, .invalidCryptoResponseModel:
-            return ""
+            return CryptoTickerConstants.noCoinsToShowError
         }
         
     }

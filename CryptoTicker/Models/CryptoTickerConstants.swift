@@ -23,5 +23,6 @@ struct CryptoTickerConstants {
     static let coinCellType = "Type"
     static let coinCellRateUSD = "RateUSD"
     static let coinActivityIndicator = "Retrieving coins..."
+    static let noCoinsToShowError = "No coins to be found. Try again later."
     
 }
