@@ -17,7 +17,7 @@ class CoinCell : UITableViewCell {
             
             typeLabelContent.text = cryptoTickerCoin?.type.capitalized ?? ""
             
-            rateUSDLabelContent.text = "\(cryptoTickerCoin?.rateUsd ?? "") \(cryptoTickerCoin?.currencySymbol ?? "")"
+            rateUSDLabelContent.text = "\(cryptoTickerCoin?.rateUsd ?? "") \(cryptoTickerCoin?.currencySymbol ?? cryptoTickerCoin?.symbol ?? "")"
             
         }
     }
