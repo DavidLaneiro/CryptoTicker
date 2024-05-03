@@ -83,6 +83,7 @@ class CoinCell : UITableViewCell {
         
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 18, weight: .bold)
+        label.numberOfLines = 0
         label.textColor = .black
         label.textAlignment = .left
         

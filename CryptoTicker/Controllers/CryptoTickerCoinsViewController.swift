@@ -50,7 +50,6 @@ class CryptoTickerCoinsViewController : UIViewController{
         label.font = .systemFont(ofSize: 30, weight: .bold)
         label.textColor = .black
         label.textAlignment = .left
-        label.isUserInteractionEnabled = true
         
         // For now just for testing purposes
         label.text = CryptoTickerConstants.coinsTitle
@@ -72,6 +71,24 @@ class CryptoTickerCoinsViewController : UIViewController{
         
     }()
     
+    
+    // MARK: Button
+    
+    let cryptoCloseButton : UIButton = {
+        
+        let button = UIButton(type: .custom)
+        
+        
+        let imageForButton = UIImage(systemName: "xmark")?.withRenderingMode(.alwaysTemplate)
+        
+        button.setImage(imageForButton, for: .normal)
+        button.tintColor = .black
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        return button
+    }()
+    
     // MARK: Initial Setup
     override func viewDidLoad() {
         
@@ -87,18 +104,17 @@ class CryptoTickerCoinsViewController : UIViewController{
         self.cryptoTableView.register(CoinCell.self, forCellReuseIdentifier: CryptoTickerConstants.cryptoCoinCell)
     
         
+        // Add action to the close button
+        self.cryptoCloseButton.addTarget(self, action: #selector(closeButtonTouchUpInside), for: .touchUpInside)
+        
         // Add UI in order
         self.addStackView()
+        self.addCloseButton()
         self.addActivityIndicator()
         self.addTitle()
         self.addTableView()
-        
-        // Add Gesture recognizer to title label
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(titleTouchUpInside))
-        
-        self.cryptoTitleLabel.addGestureRecognizer(tapGesture)
-        
-        
+
+    
         // In case we do not have a Presenter
         if cryptoPresenter == nil {
             
@@ -132,7 +148,10 @@ class CryptoTickerCoinsViewController : UIViewController{
             self.cryptoTitleLabel.isHidden = true
     }
     
-    @objc fileprivate func titleTouchUpInside(){
+    
+    // MARK: Button functions
+    
+    @objc fileprivate func closeButtonTouchUpInside(){
         
         self.dismiss(animated: true)
         
@@ -152,25 +171,6 @@ class CryptoTickerCoinsViewController : UIViewController{
         self.cryptoActivityIndicator.stopAnimating()
     }
     
-    // MARK: Show alert
-    fileprivate func showAlert(cryptoError : CryptoTickerErrorModel){
-        
-        // Show the alert and when OK is Tapped
-        // View controller is dismissed
-        let alertController = UIAlertController(title: "Alert" , message: cryptoError.errorDescription , preferredStyle: .alert)
-        
-        let action = UIAlertAction(title: "Ok", style: .default, handler: { (action) in
-            
-            self.dismiss(animated: true)
-            
-        })
-        
-        alertController.addAction(action)
-        
-        self.present(alertController, animated: true)
-        
-    }
-    
     // MARK: Add layout
     fileprivate func addStackView(){
         
@@ -182,6 +182,19 @@ class CryptoTickerCoinsViewController : UIViewController{
             self.cryptoVerticalStackView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 20),
             self.cryptoVerticalStackView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
         ])
+        
+    }
+    
+    fileprivate func addCloseButton(){
+        
+        self.view.addSubview(self.cryptoCloseButton)
+        
+        NSLayoutConstraint.activate([
+            self.cryptoCloseButton.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 30),
+            self.cryptoCloseButton.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -30)
+        
+        ])
+        
         
     }
     
@@ -229,7 +242,10 @@ extension CryptoTickerCoinsViewController : CryptoTickerViewDelegateProtocol {
         DispatchQueue.main.async {
             self.hideActivityIndicator()
             self.hideTitleLabel()
-            self.showAlert(cryptoError: error)
+            
+            // When no coins show an error message in the center of the screen
+            
+            
         }
         
     }

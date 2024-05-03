@@ -32,6 +32,7 @@
 		12E22B482BD7EA0C001400C1 /* CryptoTickerHomePageViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E22B472BD7EA0C001400C1 /* CryptoTickerHomePageViewControllerTests.swift */; };
 		12E22B4A2BD94767001400C1 /* CryptoTickerCoinsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E22B492BD94767001400C1 /* CryptoTickerCoinsViewController.swift */; };
 		12E22B562BDFE3D0001400C1 /* CoinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E22B552BDFE3D0001400C1 /* CoinCell.swift */; };
+		12F539A12BE5225E004D6C1D /* CryptoErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F539A02BE5225E004D6C1D /* CryptoErrorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		12E22B472BD7EA0C001400C1 /* CryptoTickerHomePageViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTickerHomePageViewControllerTests.swift; sourceTree = "<group>"; };
 		12E22B492BD94767001400C1 /* CryptoTickerCoinsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTickerCoinsViewController.swift; sourceTree = "<group>"; };
 		12E22B552BDFE3D0001400C1 /* CoinCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinCell.swift; sourceTree = "<group>"; };
+		12F539A02BE5225E004D6C1D /* CryptoErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoErrorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +251,7 @@
 		12176F902BE13BD10057B93F /* CustomComponents */ = {
 			isa = PBXGroup;
 			children = (
+				12F5399F2BE52240004D6C1D /* CustomViews */,
 				12176F912BE13BDA0057B93F /* CustomActivityIndicator */,
 				12E22B542BDFE3B6001400C1 /* CustomCells */,
 			);
@@ -293,6 +296,14 @@
 				12E22B552BDFE3D0001400C1 /* CoinCell.swift */,
 			);
 			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		12F5399F2BE52240004D6C1D /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				12F539A02BE5225E004D6C1D /* CryptoErrorView.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -433,6 +444,7 @@
 				1202C81C2BD2D76E00A292CC /* CryptoTickerViewDelegateProtocol.swift in Sources */,
 				1202C7D72BD2D18700A292CC /* AppDelegate.swift in Sources */,
 				1202C8252BD2DA6500A292CC /* CryptoTickerWebserviceMock.swift in Sources */,
+				12F539A12BE5225E004D6C1D /* CryptoErrorView.swift in Sources */,
 				1202C8162BD2D57D00A292CC /* CryptoTickerCoinsPresenterProtocol.swift in Sources */,
 				1202C7D92BD2D18700A292CC /* SceneDelegate.swift in Sources */,
 				1202C8272BD2DB9500A292CC /* CryptoTickerCoins.swift in Sources */,
