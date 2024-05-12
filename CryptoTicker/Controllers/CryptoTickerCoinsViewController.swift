@@ -89,6 +89,9 @@ class CryptoTickerCoinsViewController : UIViewController{
         return button
     }()
     
+    // MARK: Custom Views
+    let cryptoErrorView = CryptoErrorView()
+    
     // MARK: Initial Setup
     override func viewDidLoad() {
         
@@ -113,6 +116,7 @@ class CryptoTickerCoinsViewController : UIViewController{
         self.addActivityIndicator()
         self.addTitle()
         self.addTableView()
+        self.addErrorView()
 
     
         // In case we do not have a Presenter
@@ -171,6 +175,17 @@ class CryptoTickerCoinsViewController : UIViewController{
         self.cryptoActivityIndicator.stopAnimating()
     }
     
+    // MARK: Custom View functions
+    fileprivate func showErrorView(image: UIImage, text: String){
+        self.cryptoErrorView.isHidden = false
+        self.cryptoErrorView.setImage(image)
+        self.cryptoErrorView.setText(text)
+    }
+    
+    fileprivate func hideErrorView(){
+        self.cryptoErrorView.isHidden = true
+    }
+    
     // MARK: Add layout
     fileprivate func addStackView(){
         
@@ -213,6 +228,21 @@ class CryptoTickerCoinsViewController : UIViewController{
     fileprivate func addTableView(){
         self.cryptoVerticalStackView.addArrangedSubview(self.cryptoTableView)
     }
+    
+    fileprivate func addErrorView(){
+        
+        self.cryptoVerticalStackView.addSubview(cryptoErrorView)
+        cryptoErrorView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            
+            cryptoErrorView.centerXAnchor.constraint(equalTo: self.cryptoVerticalStackView.centerXAnchor),
+            cryptoErrorView.centerYAnchor.constraint(equalTo: self.cryptoVerticalStackView.centerYAnchor)
+        
+        ])
+        
+        self.hideErrorView()
+        
+    }
 }
 
 
@@ -244,7 +274,7 @@ extension CryptoTickerCoinsViewController : CryptoTickerViewDelegateProtocol {
             self.hideTitleLabel()
             
             // When no coins show an error message in the center of the screen
-            
+            self.showErrorView(image: UIImage(named: "noCoinsFound") ?? UIImage(), text: error.errorDescription ?? "")
             
         }
         
@@ -271,10 +301,24 @@ extension CryptoTickerCoinsViewController : UITableViewDataSource, UITableViewDe
         cell.separatorInset = UIEdgeInsets.zero
         cell.layoutMargins = UIEdgeInsets.zero
         
-        cell.cryptoTickerCoin = self.cryptoCoins?.data[indexPath.row]
+        guard let cryptoCoins = self.cryptoCoins else{
+            
+            return UITableViewCell()
+            
+        }
         
+        guard indexPath.row < cryptoCoins.data.count else {
+
+            return UITableViewCell()
+        }
+ 
+        let coin = cryptoCoins.data[indexPath.row]
+        
+        
+        // Configure the cell with the data
+        cell.configure(with: coin)
+
         return cell
-        
     }
     
 }

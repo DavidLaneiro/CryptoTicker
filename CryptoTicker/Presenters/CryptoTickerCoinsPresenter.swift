@@ -34,8 +34,7 @@ class CryptoTickerCoinsPresenter : CryptoTickerCoinsPresenterProtocol{
                 
             if let retrievedCoins = responseModel{
                     
-//                self?.delegate.successfullCoinsRetrieving(retrievedCoins: retrievedCoins)
-                self?.delegate.errorHandler(error: CryptoTickerErrorModel.invalidCryptoResponseModel)
+                self?.delegate.successfullCoinsRetrieving(retrievedCoins: retrievedCoins)
                     
             }
         }

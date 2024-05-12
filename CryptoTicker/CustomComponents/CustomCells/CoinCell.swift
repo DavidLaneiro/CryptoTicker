@@ -10,18 +10,6 @@ import UIKit
 
 class CoinCell : UITableViewCell {
     
-    // Set this variable to populate the cell
-    var cryptoTickerCoin : CryptoTickerCoin?{
-        didSet{
-            idLabel.text = "\(cryptoTickerCoin?.id.capitalized ?? "") \(cryptoTickerCoin?.currencySymbol ?? "") (\(cryptoTickerCoin?.symbol ?? ""))"
-            
-            typeLabelContent.text = cryptoTickerCoin?.type.capitalized ?? ""
-            
-            rateUSDLabelContent.text = "\(cryptoTickerCoin?.rateUsd ?? "") \(cryptoTickerCoin?.currencySymbol ?? cryptoTickerCoin?.symbol ?? "")"
-            
-        }
-    }
-    
     // StackViews
     let coinCellVerticalStackView : UIStackView = {
         
@@ -146,6 +134,15 @@ class CoinCell : UITableViewCell {
         self.addContentStackViewsToHorizontalStackView()
         self.addContentLabelsToContentStackViews()
         
+    }
+    
+    // Setup the cell
+    func configure(with cryptoCoin: CryptoTickerCoin){
+        idLabel.text = "\(cryptoCoin.id.capitalized) \(cryptoCoin.currencySymbol ?? "") (\(cryptoCoin.symbol))"
+        
+        typeLabelContent.text = cryptoCoin.type.capitalized
+        
+        rateUSDLabelContent.text = "\(cryptoCoin.rateUsd)\(CryptoTickerConstants.dollarSymbol)"
     }
     
     // In order

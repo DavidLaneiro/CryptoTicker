@@ -31,12 +31,14 @@ final class CryptoTickerHomePageViewControllerTests: XCTestCase {
         // Arrange
         
         // Act
+        let homePageLogo = sut.homePageLogo
         let titleLabel = sut.cryptoTitle
         let subtitleLabel = sut.cryptoSubtitle
         let cryptoButton = sut.cryptoButton
         let cryptoStackView = sut.cryptoStackView
         
         // Assert
+        XCTAssertNotNil(homePageLogo, "The homepage logo should not be nil.")
         XCTAssertNotNil(titleLabel, "The title label should not be nil.")
         XCTAssertNotNil(subtitleLabel, "The subtitle label should not be nil.")
         XCTAssertNotNil(cryptoButton, "The cryptoButton should not be nil.")
@@ -80,6 +82,20 @@ final class CryptoTickerHomePageViewControllerTests: XCTestCase {
     }
     
     
+    func testCryptoTickerHomePageViewController_WhenCreated_HasImageViewWithCorrectImage(){
+        
+        // Arrange
+        let sutImageView = sut.homePageLogo
+        let expectedImage = UIImage(named: "manyCoins") ?? UIImage()
+
+        // Assert
+        XCTAssertNotNil(sutImageView, "The homepage logo ImageView should not be nil")
+        XCTAssertNotNil(sutImageView.image, "The Image should not be nil")
+        XCTAssertEqual(sutImageView.image, expectedImage, "The Image should be the one named manyCoins. Check the name.")
+
+    }
+    
+
 //    func testCryptoTickerHomePageViewController_WhenGetCoinsButtonTapped_InvokesGetCoinsProcess(){
 //        // Arrange
 //        let cryptoWebServiceMock = CryptoTickerWebserviceMock()
@@ -108,7 +124,7 @@ final class CryptoTickerHomePageViewControllerTests: XCTestCase {
         
         
         // Assert
-        XCTAssertEqual(cryptoArrangedSubViewsCount, 3, "The Crypto StackView should only have 3 arranged subviews.")
+        XCTAssertEqual(cryptoArrangedSubViewsCount, 4, "The Crypto StackView should only have 4 arranged subviews.")
         
     }
     
@@ -128,6 +144,31 @@ final class CryptoTickerHomePageViewControllerTests: XCTestCase {
         XCTAssertEqual(stackViewAxis, .vertical, "The Crypto StackView axis should be vertical.")
         XCTAssertEqual(stackViewAlignment, .center, "The Crypto StackView alignment should be center.")
         XCTAssertEqual(stackViewSpacing, 20, "The Crypto StackView spacing should be 20.")
+        
+    }
+    
+    
+    func testCryptoTickerHomePageViewController_WhenGetCoinsIsTapped_ShouldPresentTheCorrectViewController(){
+        
+        // Act
+        let expectation = XCTestExpectation(description: "Is expected to present the CryptoTickerCoinsViewController")
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        window.rootViewController = sut
+        window.makeKeyAndVisible()
+        
+        // Arrange
+        sut.getCoinsTapped()
+        
+        // Assert
+        DispatchQueue.main.async{
+            
+            XCTAssertTrue(window.rootViewController?.presentedViewController is CryptoTickerCoinsViewController)
+            
+            expectation.fulfill()
+            
+        }
+        
+        wait(for: [expectation], timeout: 5)
         
     }
     

@@ -12,6 +12,14 @@ class CryptoTickerHomePageViewController : UIViewController{
     
     // MARK: Create UI Programatically
     
+    let homePageLogo : UIImageView = {
+        
+        let image = UIImage(named: "manyCoins") ?? UIImage()
+        let imageView = UIImageView(image: image)
+        return imageView
+        
+    }()
+    
     let cryptoTitle : UILabel = {
         
         let title = UILabel()
@@ -83,7 +91,8 @@ class CryptoTickerHomePageViewController : UIViewController{
     // Add subviews in order to the vertical stackview
     // Add constraints
     private func addStackView(){
-            
+        
+        cryptoStackView.addArrangedSubview(homePageLogo)
         cryptoStackView.addArrangedSubview(cryptoTitle)
         cryptoStackView.addArrangedSubview(cryptoSubtitle)
         cryptoStackView.addArrangedSubview(cryptoButton)
@@ -98,14 +107,17 @@ class CryptoTickerHomePageViewController : UIViewController{
             cryptoStackView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
             cryptoStackView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
             cryptoButton.heightAnchor.constraint(equalToConstant: 50),
-            cryptoButton.widthAnchor.constraint(equalToConstant: 200)
+            cryptoButton.widthAnchor.constraint(equalToConstant: 200),
+            homePageLogo.heightAnchor.constraint(equalToConstant: 100),
+            homePageLogo.widthAnchor.constraint(equalToConstant: 100),
+            cryptoSubtitle.widthAnchor.constraint(equalToConstant: 300)
         ])
         
     }
 
     
     
-    @objc fileprivate func getCoinsTapped(){
+    @objc func getCoinsTapped(){
         
         DispatchQueue.main.async {
             self.present(CryptoTickerCoinsViewController(), animated: true)

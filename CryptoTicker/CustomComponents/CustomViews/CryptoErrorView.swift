@@ -23,6 +23,7 @@ class CryptoErrorView : UIView{
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 18, weight: .bold)
+        label.textColor = .systemGray
         label.textAlignment = .center
         label.numberOfLines = 0
         return label
@@ -37,12 +38,18 @@ class CryptoErrorView : UIView{
     
     func setImage(_ image: UIImage){
         
-        self.cryptoImageView.image = image
+        let tintedImage = image.withRenderingMode(.alwaysTemplate)
+        
+        self.cryptoImageView.image = tintedImage
+        self.cryptoImageView.tintColor = .systemGray
+        
         self.addSubview(cryptoImageView)
         
         NSLayoutConstraint.activate([
-            self.cryptoImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor)
-        
+            self.cryptoImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            self.cryptoImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            self.cryptoImageView.heightAnchor.constraint(equalToConstant: 100),
+            self.cryptoImageView.widthAnchor.constraint(equalToConstant: 100)
         ])
         
     }
@@ -53,9 +60,9 @@ class CryptoErrorView : UIView{
         self.addSubview(cryptoErrorLabel)
         
         NSLayoutConstraint.activate([
-            self.cryptoErrorLabel.topAnchor.constraint(equalTo: self.cryptoImageView.bottomAnchor, constant: 20),
-            self.cryptoErrorLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
-            self.cryptoErrorLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            self.cryptoErrorLabel.topAnchor.constraint(equalTo: self.cryptoImageView.bottomAnchor, constant: 10),
+            self.cryptoErrorLabel.widthAnchor.constraint(equalToConstant: 200),
+            self.cryptoErrorLabel.centerXAnchor.constraint(equalTo: self.cryptoImageView.centerXAnchor)
 
         ])
         
