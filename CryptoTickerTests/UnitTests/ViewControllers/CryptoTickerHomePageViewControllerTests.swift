@@ -29,13 +29,12 @@ final class CryptoTickerHomePageViewControllerTests: XCTestCase {
     func testCryptoTickerHomePageViewController_WhenUIExists_ShouldReturnNotNil(){
         
         // Arrange
-        
-        // Act
         let homePageLogo = sut.homePageLogo
         let titleLabel = sut.cryptoTitle
         let subtitleLabel = sut.cryptoSubtitle
         let cryptoButton = sut.cryptoButton
         let cryptoStackView = sut.cryptoStackView
+        
         
         // Assert
         XCTAssertNotNil(homePageLogo, "The homepage logo should not be nil.")
