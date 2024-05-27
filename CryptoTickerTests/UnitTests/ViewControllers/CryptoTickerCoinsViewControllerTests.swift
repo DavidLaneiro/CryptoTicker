@@ -11,10 +11,15 @@ import XCTest
 final class CryptoTickerCoinsViewControllerTests: XCTestCase {
     
     var sut : CryptoTickerCoinsViewController!
+    var cryptoWebService : CryptoTickerWebserviceMock!
+    var cryptoPresenter : CryptoTickerCoinsPresenterMock!
     
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         sut = CryptoTickerCoinsViewController()
+        cryptoWebService = CryptoTickerWebserviceMock()
+        cryptoPresenter = CryptoTickerCoinsPresenterMock(cryptoWebService: cryptoWebService, delegate: sut)
+        sut.cryptoPresenter = cryptoPresenter
         sut.loadViewIfNeeded()
         
     }
@@ -22,6 +27,8 @@ final class CryptoTickerCoinsViewControllerTests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         sut = nil
+        cryptoWebService = nil
+        cryptoPresenter = nil
     }
     
     func testCryptoTickerCoinsViewController_WhenUIExists_ShouldReturnNotNil(){
@@ -61,6 +68,68 @@ final class CryptoTickerCoinsViewControllerTests: XCTestCase {
         XCTAssertFalse(currentIsScrollIndicatorVisible, "The current value for the showsVerticalScrollIndicator flag of the crytoTableView in CryptoTickerCoinsViewController should be False.")
         
     }
+    
+    func testCryptoTickerCoinsViewController_WhenCreated_HasTableViewWithCorrectNumberOfCells(){
+        
+        // Arrange
+        let cryptoTableView = sut.cryptoTableView
+    
+        // Act
+        let numberOfRows = cryptoTableView.numberOfRows(inSection: 0)
+        
+        // Assert
+        XCTAssertEqual(numberOfRows, 1, "The table view of coins must only have 1 coin cell based on the dummy data.")
+        
+    }
+    
+    func testCryptoTickerCoinsViewController_WhenCreated_HasTableViewWithCorrectCellType(){
+        
+        // Arrange
+        let cryptoTableView = sut.cryptoTableView
+    
+        // Act
+        cryptoTableView.reloadData()
+        let cell = cryptoTableView.cellForRow(at: .init(row: 0, section: 0))
+        
+        
+        // Assert
+        XCTAssertNotNil(cell, "Cell should not be nil")
+        XCTAssertTrue(cell is CoinCell, "The table view cell must be of type CoinCell.")
+    }
+    
+    func testCryptoTickerCoinsViewController_WhenCreated_HasTableViewWithCorrectCellData(){
+        
+        // Arrange
+        let cryptoTableView = sut.cryptoTableView
+    
+        // Act
+        cryptoTableView.reloadData()
+        
+        let cell = cryptoTableView.cellForRow(at: .init(row: 0, section: 0))
+        
+        // CryptoTickerCoin(id: "barbadian-dollar", symbol: "BBD", currencySymbol: "$", type:  "fiat", rateUsd: "0.5000000000000000")
+    
+        guard let cell = cell as? CoinCell else {
+            XCTFail("Expected a cell of type CoinCell")
+            return
+        }
+        
+        let cellIdTitle = cell.idLabel.text
+        let cellTypeTitle = cell.typeLabel.text
+        let cellTypeContent = cell.typeLabelContent.text
+        let cellRateUSDTitle = cell.rateUSDLabel.text
+        let cellRateUSDContent = cell.rateUSDLabelContent.text
+        
+        // Assert
+        XCTAssertEqual(cellIdTitle, "Barbadian-Dollar $ (BBD)", "The cellIdTitle should be Barbadian-dollar $ (BBD)")
+        XCTAssertEqual(cellTypeTitle, "Type", "The cellTypeTitle should be Type")
+        XCTAssertEqual(cellTypeContent, "Fiat", "The cellTypeContent should be Fiat")
+        XCTAssertEqual(cellRateUSDTitle, "Rate USD", "The cellRateUSDTitle should be Rate USD")
+        XCTAssertEqual(cellRateUSDContent, "0.5000000000000000$", "The cellRateUSDContent should be 0.5000000000000000$")
+        
+    }
+    
+    
     
     func testCryptoTickerCoinsViewController_WhenCreated_HasStackViewWithCorrectProperties(){
         
@@ -109,5 +178,14 @@ final class CryptoTickerCoinsViewControllerTests: XCTestCase {
         XCTAssertEqual(activityIndicatorColor, .black , "The current color for the cryptoActivityIndicator in CryptoTickerCoinsViewController should be black.")
         
     }
+    
+    func testCryptoTickerCoinsViewController_WhenCreated_CallsProcessGetCoins(){
+
+        // Assert
+        XCTAssertTrue(cryptoPresenter.processGetCoinsCalled, "The current processGetCoinsCalled in the CryptoTickerCoinsPresenterMock should be true when the CryptoTickerCoinsViewController is loaded.")
+        
+    }
+    
+    
 
 }
